@@ -12,7 +12,7 @@ fi
 
 HAS_FAILURE=0
 
-VALUES_FILES=$(find "${CHART_PATH}" -maxdepth 1 -name 'values*.yaml' -o -name 'values*.yml' | sort)
+VALUES_FILES=$(find "${CHART_PATH}" -maxdepth 1 \( -name 'values-*.yaml' -o -name 'values-*.yml' \) | sort)
 
 if [ -z "${VALUES_FILES}" ]; then
   echo "No values files found, running template without values"
